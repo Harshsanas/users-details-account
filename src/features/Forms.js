@@ -69,6 +69,36 @@ export default function Forms() {
           </div>
         )}
       </Formik>
+
+      <hr />
+
+      <h2 className="headingtitle">Follow Now</h2>
+      <div className="followContainer">
+        <div className="formFollow">
+          <div>
+            <label>Select Users</label>{" "}
+            <select className="form-control">
+              <option value="">Choose Company Name</option>
+              <option></option>
+            </select>
+          </div>
+          <div>
+            <label>Select Users</label>{" "}
+            <select className="form-control">
+              <option value="">Choose Company Name</option>
+              <option></option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" className="Followbutton">
+          Follow
+        </button>
+      </div>
+
+      <hr />
+
+      <h2 className="headingtitle">Users and Their Followers</h2>
+      <div className="followContainer"></div>
     </>
   );
 }
