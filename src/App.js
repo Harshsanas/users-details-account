@@ -1,13 +1,19 @@
-import React from 'react';
-import './App.css';
-import Forms from "./features/Forms"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css"
+// Routes
+import * as routes from "./routes/routes";
 
-function App() {
+// Pages
+import Forms from "./pages/Forms";
+const App = () => {
   return (
-    <div className="App">
-    <Forms/>
+    <div>
+      <Routes>
+        <Route exact path={routes.ROOT} element={<Forms/>} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
