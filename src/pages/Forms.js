@@ -9,6 +9,26 @@ export default function Forms() {
     firstName: Yup.string().required("Lastname is a required field"),
     lastName: Yup.string().required("Lastname is a required field"),
   });
+
+  const followData = [
+    {
+      firstName: "Gulshan",
+      lastName: "smith",
+      emailid: "gulshan@gmail.com",
+    },
+  ];
+  const followingData = [
+    {
+      firstName: "Kulpin",
+      lastName: "smith",
+      emailid: "kulpin@gmail.com",
+    },
+  ];
+
+  const followUserData = followData.map((i) => i.firstName);
+  console.log(followUserData);
+  const followingUserData = followingData.map((i) => i.firstName);
+  console.log(followingUserData);
   return (
     <>
       <Formik
@@ -78,15 +98,15 @@ export default function Forms() {
           <div>
             <label>Select Users</label>{" "}
             <select className="form-control">
-              <option value="">Choose Company Name</option>
-              <option></option>
+              <option value="">Select Name</option>{" "}
+              <option value="">{followUserData}</option>
             </select>
           </div>
           <div>
             <label>Select Users</label>{" "}
             <select className="form-control">
-              <option value="">Choose Company Name</option>
-              <option></option>
+              <option value="">Select Name</option>{" "}
+              <option value="">{followUserData}</option>
             </select>
           </div>
         </div>
@@ -98,7 +118,34 @@ export default function Forms() {
       <hr />
 
       <h2 className="headingtitle">Users and Their Followers</h2>
-      <div className="followContainer"></div>
+      <div className="followContainers">
+        <div className="namesData">
+          <div className="imgcon">LOGO</div>
+          <div>
+            <p>
+              {followData.map((i) => i.firstName)}{" "}
+              {followData.map((i) => i.lastName)}
+            </p>
+            <p>{followData.map((i) => i.emailid)}</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://as1.ftcdn.net/v2/jpg/04/62/84/76/1000_F_462847643_Jh4XrHmtAy2s8KPeJ2UsxnoBCvKNd0Jf.jpg"
+            alt="arrow"
+          />
+        </div>
+        <div className="namesData">
+          <div className="imgcon">LOGO</div>
+          <div>
+            <p>
+              {followingData.map((i) => i.firstName)}{" "}
+              {followingData.map((i) => i.lastName)}
+            </p>
+            <p>{followingData.map((i) => i.emailid)}</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
